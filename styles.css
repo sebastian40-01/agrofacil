@@ -1,41 +1,57 @@
 :root {
-    --background: #1e1e2f; /* Fondo principal oscuro */
-    --foreground: #ffffff; /* Texto principal blanco */
-    --primary: #007f5f; /* Verde esmeralda como color primario */
-    --primary-hover: #006a4a; /* Color al pasar el mouse en botones primarios */
-    --primary-foreground: #ffffff; /* Color del texto en botones primarios */
-    --secondary: #5f5f6d; /* Gris suave como color secundario */
-    --secondary-hover: #4e4e5d; /* Color al pasar el mouse en botones secundarios */
+    /* Definición de colores principales para el diseño */
+    --background: #2c3e50; /* Fondo oscuro con un toque azulado para un ambiente profesional */
+    --foreground: #ecf0f1; /* Texto en un gris claro para máxima legibilidad */
+    --primary: #27ae60; /* Verde vibrante como color primario, simbolizando frescura y crecimiento */
+    --primary-hover: #2ecc71; /* Color al pasar el mouse en botones primarios, manteniendo la frescura */
+    --primary-foreground: #ffffff; /* Color del texto en botones primarios, asegurando un buen contraste */
+    --secondary: #8e44ad; /* Un morado rico como color secundario, proporcionando un contraste agradable */
+    --secondary-hover: #9b59b6; /* Color al pasar el mouse en botones secundarios */
     --secondary-foreground: #ffffff; /* Color del texto en botones secundarios */
-    --accent: #2dbd6b; /* Azul claro como color de acento */
-    --accent-hover: #26a96b; /* Color al pasar el mouse en acentos */
-    --accent-foreground: #000000; /* Color del texto en elementos de acento */
-    --border: #3a3a4b; /* Borde gris oscuro */
-    --muted-foreground: #b0b0c1; /* Color de texto atenuado */
-    --highlight: #2b2b2b; /* Fondo de elementos destacados */
-    --shadow: rgba(0, 0, 0, 0.25); /* Sombra general */
-    --card-background: #2c2c3a; /* Fondo de tarjetas */
-    --input-background: #3c3c4a; /* Fondo de inputs */
-    --input-border: #555; /* Borde de inputs */
-    --header-background: #1c1c2f; /* Fondo del header */
-    --tab-background: #2a2a3b; /* Fondo de pesta�as */
-    --tab-active: #007f5f; /* Fondo de pesta�as activas */
-    --tooltip-background: rgba(0, 0, 0, 0.8); /* Fondo de tooltips */
-    --tooltip-color: #ffffff; /* Color de texto en tooltips */
+    --accent: #e67e22; /* Naranja cálido para elementos de acento, llamando la atención de forma efectiva */
+    --accent-hover: #d35400; /* Color al pasar el mouse en acentos */
+    --accent-foreground: #ffffff; /* Color del texto en elementos de acento para buena visibilidad */
+    --border: #bdc3c7; /* Bordes claros que mantienen la definición sin ser demasiado oscuros */
+    --muted-foreground: #95a5a6; /* Texto atenuado para descripciones o información secundaria */
+    --highlight: #f39c12; /* Fondo de elementos destacados, enfatizando información importante con un color cálido */
+    --shadow: rgba(0, 0, 0, 0.2); /* Sombra más sutil que añade profundidad sin abrumar */
+    --card-background: #34495e; /* Fondo de tarjetas para un contraste atractivo */
+    --input-background: #2c3e50; /* Fondo de inputs, asegurando que se integre bien con el diseño general */
+    --input-border: #16a085; /* Borde de inputs, brindando una definición clara */
+    --header-background: #2980b9; /* Fondo del header, manteniendo un contraste atractivo con el texto */
+    --tab-background: #34495e; /* Fondo de pestañas, proporcionando continuidad en el diseño */
+    --tab-active: #27ae60; /* Fondo de pestañas activas para identificación clara y armoniosa */
+    --tooltip-background: rgba(0, 0, 0, 0.85); /* Fondo de tooltips, asegurando legibilidad */
+    --tooltip-color: #ffffff; /* Color de texto en tooltips, garantizando claridad */
+    --transition-duration: 0.4s; /* Suavizando transiciones visuales */
+    --border-radius: 6px; /* Radio de borde para suavizar todos los elementos */
+    --font-family: 'Roboto', sans-serif; /* Tipo de fuente moderna y legible */
+    --font-size-base: 16px; /* Tamaño de fuente base para fácil ajuste */
+    --line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
+    --shadow-card: 0 8px 20px var(--shadow); /* Sombra específica para tarjetas */
+    --shadow-button: 0 4px 10px var(--shadow); /* Sombra para botones */
+    --button-padding: 12px 24px; /* Espaciado interno estándar para botones */
+    --input-padding: 10px; /* Espaciado interno para inputs */
+    --transition-ease: ease-in-out; /* Función de easing para transiciones suaves */
 }
 
+    
+
 body {
-    font-family: 'Roboto', sans-serif; /* Fuente moderna y legible */
-    margin: 0; /* Sin m�rgenes */
-    padding: 0; /* Sin padding */
-    background-color: var(--background); /* Fondo de la p�gina */
-    color: var(--foreground); /* Color del texto */
+    font-family: var(--font-family); /* Aplicación de fuente definida en :root */
+    margin: 0; /* Eliminación de márgenes por defecto */
+    padding: 0; /* Eliminación de padding por defecto */
+    background-color: var(--background); /* Aplicación de color de fondo definido */
+    color: var(--foreground); /* Aplicación de color de texto definido */
     overflow-y: scroll; /* Permitir el desplazamiento vertical */
+    line-height: var(--line-height); /* Espaciado entre líneas para mejor lectura */
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes en WebKit */
+    -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes en Firefox */
 }
 
 /* Estilos para la barra de desplazamiento */
 ::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */
+    width: 9px; /* Ancho de la barra de desplazamiento */
 }
 
 ::-webkit-scrollbar-track {
@@ -49,222 +65,697 @@ body {
     border: 3px solid var(--background); /* Espacio alrededor del thumb */
 }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: var(--accent); /* Color de la barra al pasar el mouse */
-    }
-
-.container {
-    max-width: 1200px; /* Ancho m�ximo de contenedor */
-    margin: 0 auto; /* Centrando el contenedor */
-    padding: 20px; /* Espaciado interno */
-    box-shadow: 0 4px 30px var(--shadow); /* Sombra para efecto de elevaci�n */
-    border-radius: 8px; /* Bordes redondeados */
-    position: relative; /* Posici�n relativa para el fondo de part�culas */
-    z-index: 1; /* Asegurar que el contenedor est� por encima del fondo */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent); /* Color de la barra al pasar el mouse */
 }
 
+.container {
+    max-width: 1200px; /* Ancho máximo de contenedor */
+    margin: 0 auto; /* Centrando el contenedor */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: var(--shadow-card); /* Sombra para efecto de elevación */
+    border-radius: var(--border-radius); /* Bordes más redondeados */
+    position: relative; /* Posición relativa para el fondo de partículas */
+    z-index: 1; /* Asegurar que el contenedor esté por encima del fondo */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
+}
+
+/* Estilos de encabezado */
 header {
     display: flex; /* Flexbox para el header */
     justify-content: space-between; /* Espaciado entre los elementos */
-    align-items: center; /* Alineaci�n vertical */
+    align-items: center; /* Alineación vertical */
     margin-bottom: 20px; /* Espaciado inferior */
     padding: 20px; /* Espaciado interno */
     background-color: var(--header-background); /* Fondo del header */
-    border-radius: 8px; /* Bordes redondeados */
+    border-radius: var(--border-radius); /* Bordes más redondeados */
     box-shadow: 0 2px 10px var(--shadow); /* Sombra del header */
+    transition: background-color var(--transition-duration) var(--transition-ease); /* Suaviza el cambio de color de fondo */
+}
+
+/* Efecto al hacer scroll en el header */
+header.scrolled {
+    background-color: rgba(30, 30, 47, 0.9); /* Fondo ligeramente transparente al hacer scroll */
+    box-shadow: 0 4px 20px var(--shadow); /* Sombra más pronunciada al hacer scroll */
 }
 
 h1, h2, h3 {
-    margin-bottom: 20px; /* Espaciado inferior para t�tulos */
-    color: var(--accent); /* Color de los t�tulos */
+    margin-bottom: 20px; /* Espaciado inferior para títulos */
+    color: var(--accent); /* Color de los títulos */
     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Sombra de texto para profundidad */
+    letter-spacing: 1px; /* Espaciado entre letras */
 }
 
 h1 {
-    font-size: 2.5em; /* Tama�o de fuente para el t�tulo principal */
+    font-size: 2.5em; /* Tamaño de fuente para el título principal */
+    font-weight: bold; /* Negrita para mayor énfasis */
 }
 
 h2 {
-    font-size: 2em; /* Tama�o de fuente para subt�tulos */
+    font-size: 2em; /* Tamaño de fuente para subtítulos */
+    font-weight: semi-bold; /* Seminegrita para sutileza */
 }
 
 h3 {
-    font-size: 1.5em; /* Tama�o de fuente para subt�tulos menores */
+    font-size: 1.5em; /* Tamaño de fuente para subtítulos menores */
+    font-weight: normal; /* Fuente normal para sutileza */
 }
 
+/* Estilos para listas */
+ul, ol {
+    padding-left: 20px; /* Espaciado interno para listas */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+li {
+    margin-bottom: 10px; /* Espaciado entre ítems de lista */
+}
+
+/* Estilos de párrafo */
+p {
+    margin-bottom: 20px; /* Espaciado inferior para párrafos */
+    line-height: 1.7; /* Espaciado de líneas para párrafos */
+}
+
+/* Estilo de enlaces */
+a {
+    color: var(--primary); /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado por defecto */
+    transition: color var(--transition-duration), transform var(--transition-duration); /* Suaviza el cambio de color */
+}
+
+a:hover {
+    color: var(--accent); /* Color de enlace al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+/* Estilo para los botones */
 button {
-    background-color: var(--primary); /* Color de fondo del bot�n */
-    color: var(--primary-foreground); /* Color del texto del bot�n */
+    background-color: var(--primary); /* Color de fondo del botón */
+    color: var(--primary-foreground); /* Color del texto en el botón */
     border: none; /* Sin borde */
-    padding: 12px 24px; /* Espaciado interno aumentado */
-    cursor: pointer; /* Cursor de puntero */
-    transition: background-color 0.3s, transform 0.3s; /* Transici�n suave */
-    border-radius: 8px; /* Bordes m�s redondeados */
-    box-shadow: 0 2px 10px var(--shadow); /* Sombra del bot�n */
-    font-size: 1em; /* Tama�o de fuente para el bot�n */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    padding: var(--button-padding); /* Espaciado interno */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    box-shadow: var(--shadow-button); /* Sombra para efecto de elevación */
+    transition: background-color var(--transition-duration), box-shadow var(--transition-duration), transform var(--transition-duration); /* Suaviza transiciones */
 }
 
-    button:hover {
-        background-color: var(--primary-hover); /* Color de fondo al pasar el mouse */
-        transform: translateY(-2px); /* Efecto de elevaci�n al pasar el mouse */
-    }
+/* Efectos al pasar el mouse sobre botones */
+button:hover {
+    background-color: var(--primary-hover); /* Color al pasar el mouse */
+    box-shadow: 0 8px 20px var(--shadow); /* Sombra más pronunciada */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
 
-    button:active {
-        transform: translateY(1px); /* Efecto de hundido al hacer clic */
-    }
-
-.card {
-    background-color: var(--card-background); /* Fondo de la tarjeta */
-    border-radius: 8px; /* Bordes redondeados */
+button:disabled {
+    background-color: var(--secondary); /* Color de fondo para botones deshabilitados */
+    color: var(--muted-foreground); /* Color del texto en botones deshabilitados */
+    cursor: not-allowed; /* Cambiar el cursor al pasar por encima */
+}
+/* Estilos para formularios */
+form {
+    display: flex; /* Flexbox para disposición de elementos del formulario */
+    flex-direction: column; /* Alinear los elementos en una columna */
+    margin: 20px 0; /* Espaciado superior e inferior */
     padding: 20px; /* Espaciado interno */
-    margin-bottom: 20px; /* Espaciado inferior */
-    box-shadow: 0 2px 10px var(--shadow); /* Sombra de la tarjeta */
-    transition: transform 0.3s, box-shadow 0.3s; /* Transici�n suave */
+    background-color: var(--card-background); /* Fondo de la tarjeta de formulario */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    box-shadow: var(--shadow-card); /* Sombra para efecto de elevación */
 }
 
-    .card:hover {
-        transform: scale(1.05); /* Efecto de escala al pasar el mouse */
-        box-shadow: 0 4px 20px var(--shadow); /* Sombra aumentada al pasar el mouse */
-    }
-
-input, select, textarea {
-    width: 100%; /* Ancho completo */
-    padding: 12px; /* Espaciado interno aumentado */
-    margin-bottom: 10px; /* Espaciado inferior */
-    background-color: var(--input-background); /* Fondo de los inputs */
-    border: 1px solid var(--input-border); /* Borde del input */
-    color: var(--foreground); /* Color del texto */
-    border-radius: 4px; /* Bordes redondeados */
-    transition: border-color 0.3s; /* Transici�n suave para el borde */
-    font-size: 1em; /* Tama�o de fuente en inputs */
-}
-
-    input:focus, select:focus, textarea:focus {
-        border-color: var(--primary); /* Color de borde al enfocar */
-        outline: none; /* Sin borde por defecto */
-    }
-
+/* Estilos para inputs de texto */
+input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea {
-    min-height: 100px; /* Altura m�nima para el textarea */
-}
-
-.tabs {
-    display: flex; /* Flexbox para las pesta�as */
+    width: 100%; /* Ancho completo del contenedor */
+    padding: var(--input-padding); /* Espaciado interno */
     margin-bottom: 20px; /* Espaciado inferior */
-    border-bottom: 2px solid var(--border); /* Borde inferior para pesta�as */
-}
-
-.tab {
-    padding: 10px 20px; /* Espaciado interno */
-    cursor: pointer; /* Cursor de puntero */
-    background-color: var(--tab-background); /* Fondo de las pesta�as */
-    border: none; /* Sin borde */
+    background-color: var(--input-background); /* Fondo de inputs */
+    border: 1px solid var(--input-border); /* Borde de inputs */
+    border-radius: var(--border-radius); /* Bordes redondeados */
     color: var(--foreground); /* Color del texto */
-    border-bottom: 2px solid transparent; /* Borde inferior transparente */
-    transition: border-bottom 0.3s, background-color 0.3s; /* Transici�n suave para el borde */
-    font-size: 1em; /* Tama�o de fuente para las pesta�as */
+    font-size: var(--font-size-base); /* Tamaño de fuente estándar */
+    transition: border-color var(--transition-duration), box-shadow var(--transition-duration); /* Suaviza las transiciones */
 }
 
-    .tab:hover {
-        background-color: var(--secondary-hover); /* Color de fondo al pasar el mouse */
-    }
-
-    .tab.active {
-        border-bottom: 2px solid var(--tab-active); /* Borde inferior en pesta�a activa */
-    }
-
-.tab-content {
-    display: none; /* Ocultar contenido por defecto */
-    padding: 20px; /* Espaciado interno en contenido */
-    background-color: var(--highlight); /* Fondo de contenido */
-    border-radius: 4px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px var(--shadow); /* Sombra de contenido */
+/* Efectos al enfocar en inputs */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: var(--primary); /* Cambia el color del borde al enfocarse */
+    box-shadow: 0 0 5px var(--primary); /* Sombra suave al enfocarse */
+    outline: none; /* Elimina el contorno por defecto */
 }
 
-    .tab-content.active {
-        display: block; /* Mostrar contenido activo */
-    }
+/* Estilos para los botones de envío del formulario */
+input[type="submit"],
+button[type="submit"] {
+    background-color: var(--accent); /* Color de fondo para el botón de envío */
+    color: var(--accent-foreground); /* Color del texto */
+    border: none; /* Sin borde */
+    padding: var(--button-padding); /* Espaciado interno */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    transition: background-color var(--transition-duration), transform var(--transition-duration), box-shadow var(--transition-duration); /* Suaviza las transiciones */
+}
 
-.product-card {
-    background-color: var(--card-background); /* Fondo de la tarjeta de producto */
-    border-radius: 8px; /* Bordes redondeados */
-    margin: 10px; /* Espaciado */
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+    background-color: var(--accent-hover); /* Color de fondo al pasar el mouse */
+    box-shadow: 0 4px 12px var(--shadow); /* Sombra más pronunciada al pasar el mouse */
+}
+
+/* Estilos de tarjetas */
+.card {
+    background-color: var(--card-background); /* Fondo de las tarjetas */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    box-shadow: var(--shadow-card); /* Sombra para efecto de elevación */
     padding: 20px; /* Espaciado interno */
-    box-shadow: 0 2px 10px var(--shadow); /* Sombra de la tarjeta */
-    transition: transform 0.3s; /* Transici�n suave */
+    margin: 20px 0; /* Espaciado vertical */
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration); /* Suaviza las transiciones */
 }
 
-    .product-card img {
-        width: 100%; /* Imagen a ancho completo */
-        height: auto; /* Altura autom�tica */
-        border-radius: 8px; /* Bordes redondeados en im�genes */
-    }
+/* Efectos al pasar el mouse sobre las tarjetas */
+.card:hover {
+    transform: translateY(-4px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 20px var(--shadow); /* Sombra más pronunciada al pasar el mouse */
+}
 
-    .product-card:hover {
-        transform: scale(1.05); /* Efecto de escala al pasar el mouse */
-        box-shadow: 0 4px 20px var(--shadow); /* Sombra aumentada al pasar el mouse */
-    }
+/* Estilos para listas */
+ul {
+    list-style-type: none; /* Elimina viñetas */
+    padding: 0; /* Sin padding */
+}
 
+/* Estilos para ítems de lista */
+ul li {
+    background-color: var(--highlight); /* Fondo para ítems de lista */
+    padding: 10px; /* Espaciado interno */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    margin-bottom: 10px; /* Espaciado entre ítems */
+    transition: background-color var(--transition-duration); /* Suaviza el cambio de color */
+}
+
+/* Efectos al pasar el mouse sobre ítems de lista */
+ul li:hover {
+    background-color: var(--primary); /* Color de fondo al pasar el mouse */
+    color: var(--primary-foreground); /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%; /* Ancho completo de la tabla */
+    border-collapse: collapse; /* Colapsa los bordes */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+th, td {
+    padding: 12px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+    border-bottom: 1px solid var(--border); /* Borde inferior */
+}
+
+th {
+    background-color: var(--primary); /* Fondo de las cabeceras de la tabla */
+    color: var(--primary-foreground); /* Color del texto en cabeceras */
+}
+
+tr:nth-child(even) {
+    background-color: var(--card-background); /* Fondo alternativo para filas pares */
+}
+
+tr:hover {
+    background-color: var(--highlight); /* Color de fondo al pasar el mouse sobre la fila */
+    transition: background-color var(--transition-duration); /* Suaviza el cambio de color */
+}
+
+/* Estilos para tooltips */
 .tooltip {
-    position: relative; /* Posici�n relativa para el tooltip */
-    display: inline-block; /* Mostrar en l�nea */
+    position: relative; /* Posición relativa para el tooltip */
 }
 
-    .tooltip .tooltiptext {
-        visibility: hidden; /* Ocultar por defecto */
-        width: 120px; /* Ancho del tooltip */
-        background-color: var(--tooltip-background); /* Fondo del tooltip */
-        color: var(--tooltip-color); /* Color del texto del tooltip */
-        text-align: center; /* Texto centrado */
-        border-radius: 6px; /* Bordes redondeados */
-        padding: 5px; /* Espaciado interno */
-        position: absolute; /* Posici�n absoluta */
-        z-index: 1; /* Asegurar que est� por encima */
-        bottom: 125%; /* Colocar arriba del elemento */
-        left: 50%; /* Centrado horizontal */
-        margin-left: -60px; /* Desplazamiento negativo */
-        opacity: 0; /* Ocultar el tooltip */
-        transition: opacity 0.3s; /* Transici�n suave para la opacidad */
-    }
+.tooltip .tooltiptext {
+    visibility: hidden; /* Oculta el tooltip por defecto */
+    width: 120px; /* Ancho fijo del tooltip */
+    background-color: var(--tooltip-background); /* Fondo del tooltip */
+    color: var(--tooltip-color); /* Color del texto en el tooltip */
+    text-align: center; /* Alineación centrada del texto */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    padding: 5px; /* Espaciado interno */
+    position: absolute; /* Posición absoluta para el tooltip */
+    z-index: 1; /* Asegura que el tooltip esté por encima */
+    bottom: 125%; /* Coloca el tooltip arriba del elemento */
+    left: 50%; /* Centra el tooltip horizontalmente */
+    margin-left: -60px; /* Corrección de posición */
+    opacity: 0; /* Hace el tooltip invisible */
+    transition: opacity var(--transition-duration); /* Suaviza la aparición */
+}
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible; /* Mostrar tooltip al pasar el mouse */
-        opacity: 1; /* Hacer visible el tooltip */
-    }
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* Muestra el tooltip al pasar el mouse */
+    opacity: 1; /* Hace el tooltip visible */
+}
+/* Estilos de navegación */
+nav {
+    background-color: var(--nav-background); /* Color de fondo de la barra de navegación */
+    padding: 10px 20px; /* Espaciado interno */
+    box-shadow: var(--shadow-nav); /* Sombra de la barra de navegación */
+}
 
-.footer {
-    margin-top: 40px; /* Espaciado superior */
+nav ul {
+    list-style-type: none; /* Elimina viñetas */
+    display: flex; /* Disposición en fila */
+    justify-content: space-between; /* Espaciado entre los elementos */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espaciado entre los ítems */
+}
+
+nav ul li a {
+    text-decoration: none; /* Elimina subrayado */
+    color: var(--nav-link); /* Color de los enlaces */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    transition: background-color var(--transition-duration), color var(--transition-duration); /* Suaviza las transiciones */
+}
+
+/* Efectos al pasar el mouse sobre los enlaces de navegación */
+nav ul li a:hover {
+    background-color: var(--primary); /* Color de fondo al pasar el mouse */
+    color: var(--primary-foreground); /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Estilos para el menú desplegable */
+.dropdown {
+    position: relative; /* Posición relativa para el contenedor del dropdown */
+    display: inline-block; /* Disposición en línea */
+}
+
+.dropdown-content {
+    display: none; /* Ocultar el contenido del dropdown por defecto */
+    position: absolute; /* Posición absoluta */
+    background-color: var(--dropdown-background); /* Fondo del menú desplegable */
+    min-width: 160px; /* Ancho mínimo del dropdown */
+    box-shadow: var(--shadow-dropdown); /* Sombra del dropdown */
+    z-index: 1; /* Asegura que el dropdown esté por encima */
+}
+
+/* Mostrar el dropdown al pasar el mouse */
+.dropdown:hover .dropdown-content {
+    display: block; /* Mostrar contenido del dropdown */
+}
+
+.dropdown-content a {
+    color: var(--dropdown-link); /* Color de los enlaces del dropdown */
+    padding: 12px 16px; /* Espaciado interno */
+    text-decoration: none; /* Elimina subrayado */
+    display: block; /* Disposición en bloque */
+}
+
+/* Efectos al pasar el mouse sobre los enlaces del dropdown */
+.dropdown-content a:hover {
+    background-color: var(--highlight); /* Color de fondo al pasar el mouse */
+    color: var(--highlight-foreground); /* Cambia el color del texto al pasar el mouse */
+}
+
+/* Estilos de íconos */
+.icon {
+    width: 24px; /* Ancho de los íconos */
+    height: 24px; /* Alto de los íconos */
+    margin: 0 10px; /* Espaciado entre íconos */
+    fill: var(--icon-color); /* Color de los íconos */
+    transition: fill var(--transition-duration); /* Suaviza las transiciones */
+}
+
+/* Efectos al pasar el mouse sobre los íconos */
+.icon:hover {
+    fill: var(--icon-hover-color); /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Comienza completamente transparente */
+    }
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+.fade-in {
+    animation: fadeIn var(--animation-duration) ease-in; /* Aplica la animación de desvanecimiento */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px); /* Comienza desplazado hacia arriba */
+        opacity: 0; /* Comienza completamente transparente */
+    }
+    to {
+        transform: translateY(0); /* Termina en su posición original */
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+.slide-in {
+    animation: slideIn var(--animation-duration) ease-out; /* Aplica la animación de deslizamiento */
+}
+
+/* Estilos para modales */
+.modal {
+    display: none; /* Ocultar modal por defecto */
+    position: fixed; /* Posición fija en la ventana */
+    z-index: 1000; /* Asegura que el modal esté por encima de otros elementos */
+    left: 0; /* Alineado a la izquierda */
+    top: 0; /* Alineado a la parte superior */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Permitir desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+}
+
+/* Estilos del contenido del modal */
+.modal-content {
+    background-color: var(--modal-background); /* Fondo del contenido del modal */
+    margin: 15% auto; /* Espaciado superior y centrado horizontalmente */
     padding: 20px; /* Espaciado interno */
-    background-color: var(--highlight); /* Fondo del footer */
-    text-align: center; /* Texto centrado */
-    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid var(--border); /* Borde del modal */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    width: 80%; /* Ancho del modal */
+    animation: slideIn var(--animation-duration) ease-out; /* Aplica la animación de deslizamiento */
 }
 
-    .footer a {
-        color: var(--primary); /* Color del enlace */
-        text-decoration: none; /* Sin subrayado */
-        transition: color 0.3s; /* Transici�n suave para el color */
-    }
+/* Estilos del botón de cierre del modal */
+.close {
+    color: var(--close-button); /* Color del botón de cierre */
+    float: right; /* Alineación a la derecha */
+    font-size: 28px; /* Tamaño de fuente del botón de cierre */
+    font-weight: bold; /* Negrita para el botón de cierre */
+}
 
-        .footer a:hover {
-            color: var(--accent); /* Color del enlace al pasar el mouse */
-        }
+/* Efectos al pasar el mouse sobre el botón de cierre */
+.close:hover,
+.close:focus {
+    color: var(--close-button-hover); /* Cambia el color al pasar el mouse */
+    text-decoration: none; /* Elimina subrayado */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
 
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr; /* Una columna en m�viles */
-    }
+/* Estilos para notificaciones */
+.notification {
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espaciado inferior */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+}
 
-    header {
-        flex-direction: column; /* Columna en dispositivos peque�os */
-        align-items: flex-start; /* Alinear a la izquierda */
-    }
+.notification.success {
+    background-color: var(--success-background); /* Fondo para notificaciones de éxito */
+    color: var(--success-text); /* Color de texto para notificaciones de éxito */
+}
 
-    h1 {
-        font-size: 2em; /* Reducir tama�o del t�tulo en m�viles */
-    }
+.notification.error {
+    background-color: var(--error-background); /* Fondo para notificaciones de error */
+    color: var(--error-text); /* Color de texto para notificaciones de error */
+}
 
-    button {
-        width: 100%; /* Botones a ancho completo en m�viles */
+.notification.info {
+    background-color: var(--info-background); /* Fondo para notificaciones de información */
+    color: var(--info-text); /* Color de texto para notificaciones de información */
+}
+/* Estilos generales para el contenido */
+.content {
+    padding: 20px; /* Espaciado interno del contenido */
+    margin: 0 auto; /* Centramos el contenido horizontalmente */
+    max-width: 1200px; /* Ancho máximo para mantener la legibilidad */
+    background-color: var(--content-background); /* Fondo del contenido */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    box-shadow: var(--shadow-content); /* Sombra para profundidad */
+}
+
+/* Estilos para encabezados */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading); /* Fuente para los encabezados */
+    color: var(--heading-color); /* Color de los encabezados */
+    margin: 10px 0; /* Espaciado superior e inferior */
+}
+
+/* Estilos específicos para h1 */
+h1 {
+    font-size: 2.5rem; /* Tamaño de fuente para h1 */
+    line-height: 1.2; /* Espaciado entre líneas */
+}
+
+/* Estilos específicos para h2 */
+h2 {
+    font-size: 2rem; /* Tamaño de fuente para h2 */
+    line-height: 1.3; /* Espaciado entre líneas */
+}
+
+/* Estilos para párrafos */
+p {
+    font-family: var(--font-family-body); /* Fuente para el cuerpo del texto */
+    font-size: 1rem; /* Tamaño de fuente para párrafos */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: var(--body-text); /* Color del texto del cuerpo */
+    margin: 0 0 15px 0; /* Margen inferior */
+}
+
+/* Estilos para listas */
+ul, ol {
+    padding-left: 20px; /* Espaciado a la izquierda para listas */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+li {
+    margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+}
+
+/* Estilos para enlaces */
+a {
+    color: var(--link-color); /* Color de los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    transition: color var(--transition-duration); /* Suaviza el cambio de color */
+}
+
+/* Efectos al pasar el mouse sobre los enlaces */
+a:hover {
+    color: var(--link-hover-color); /* Color al pasar el mouse */
+}
+
+/* Estilos para botones */
+.button {
+    background-color: var(--button-background); /* Fondo del botón */
+    color: var(--button-text); /* Color del texto del botón */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color var(--transition-duration), color var(--transition-duration); /* Suaviza transiciones */
+}
+
+/* Efectos al pasar el mouse sobre los botones */
+.button:hover {
+    background-color: var(--button-hover-background); /* Cambia fondo al pasar el mouse */
+    color: var(--button-hover-text); /* Cambia texto al pasar el mouse */
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Combina bordes */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+th, td {
+    border: 1px solid var(--border); /* Borde para celdas */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+/* Estilos para el encabezado de la tabla */
+th {
+    background-color: var(--table-header-background); /* Fondo del encabezado */
+    color: var(--table-header-text); /* Color del texto del encabezado */
+}
+
+/* Estilos para el pie de la tabla */
+tfoot {
+    background-color: var(--table-footer-background); /* Fondo del pie de la tabla */
+    font-weight: bold; /* Negrita para el pie de la tabla */
+}
+
+/* Estilos para imágenes */
+img {
+    max-width: 100%; /* Ancho máximo para mantener la responsividad */
+    height: auto; /* Altura automática */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+}
+
+/* Estilos para citas */
+blockquote {
+    font-style: italic; /* Cursiva para citas */
+    border-left: 4px solid var(--quote-border); /* Borde izquierdo */
+    padding-left: 15px; /* Espaciado interno */
+    margin: 10px 0; /* Margen superior e inferior */
+    color: var(--quote-text); /* Color del texto de las citas */
+}
+
+/* Estilos para formularios */
+form {
+    display: flex; /* Disposición flex */
+    flex-direction: column; /* Columna */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para campos de entrada */
+input[type="text"], input[type="email"], textarea {
+    border: 1px solid var(--input-border); /* Borde para campos */
+    padding: 10px; /* Espaciado interno */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    margin-bottom: 15px; /* Margen inferior */
+}
+
+/* Efectos de enfoque para campos de entrada */
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: var(--input-focus-border); /* Cambia color de borde al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+/* Estilos para botones de envío */
+input[type="submit"] {
+    background-color: var(--submit-background); /* Fondo del botón de envío */
+    color: var(--submit-text); /* Color del texto del botón de envío */
+    border: none; /* Sin borde */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    padding: 10px 20px; /* Espaciado interno */
+    transition: background-color var(--transition-duration), color var(--transition-duration); /* Suaviza transiciones */
+}
+
+/* Efectos al pasar el mouse sobre el botón de envío */
+input[type="submit"]:hover {
+    background-color: var(--submit-hover-background); /* Cambia fondo al pasar el mouse */
+    color: var(--submit-hover-text); /* Cambia texto al pasar el mouse */
+}
+/* Estilos globales para transiciones */
+* {
+    box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho total */
+}
+
+/* Estilos para el cuerpo */
+body {
+    font-family: var(--font-family-body); /* Fuente del cuerpo */
+    line-height: 1.6; /* Espaciado entre líneas */
+    background-color: var(--body-background); /* Fondo del cuerpo */
+    color: var(--body-text); /* Color del texto del cuerpo */
+    transition: background-color var(--transition-duration), color var(--transition-duration); /* Suaviza cambios de fondo y color */
+}
+
+/* Transiciones para hover en tarjetas de contenido */
+.card {
+    transition: transform var(--transition-duration), box-shadow var(--transition-duration); /* Suaviza transformaciones y sombras */
+}
+
+/* Efecto al pasar el mouse sobre las tarjetas */
+.card:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+    box-shadow: var(--shadow-card-hover); /* Cambia la sombra al pasar el mouse */
+}
+
+/* Estilos para mensajes de alerta */
+.alert {
+    padding: 15px; /* Espaciado interno */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    margin: 20px 0; /* Margen superior e inferior */
+}
+
+/* Estilos para alertas de éxito */
+.alert-success {
+    background-color: var(--success-background); /* Fondo de éxito */
+    color: var(--success-text); /* Color de texto de éxito */
+}
+
+/* Estilos para alertas de error */
+.alert-error {
+    background-color: var(--error-background); /* Fondo de error */
+    color: var(--error-text); /* Color de texto de error */
+}
+
+/* Estilos para íconos */
+.icon {
+    width: 24px; /* Ancho de los íconos */
+    height: 24px; /* Altura de los íconos */
+    margin-right: 8px; /* Espaciado a la derecha */
+    vertical-align: middle; /* Alineación vertical */
+}
+
+/* Estilos para modales */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1000; /* Al frente de otros elementos */
+    left: 0; /* Alinear a la izquierda */
+    top: 0; /* Alinear a la parte superior */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: var(--modal-background); /* Fondo del modal */
+    margin: 15% auto; /* Espaciado en los márgenes */
+    padding: 20px; /* Espaciado interno */
+    border: 1px solid var(--modal-border); /* Borde */
+    width: 80%; /* Ancho del modal */
+    border-radius: var(--border-radius); /* Bordes redondeados */
+    box-shadow: var(--shadow-modal); /* Sombra del modal */
+}
+
+/* Estilos para el cierre del modal */
+.close {
+    color: var(--close-color); /* Color del botón de cerrar */
+    float: right; /* Alinear a la derecha */
+    font-size: 28px; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+}
+
+/* Efecto al pasar el mouse sobre el botón de cerrar */
+.close:hover,
+.close:focus {
+    color: var(--close-hover-color); /* Cambia el color al pasar el mouse */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+
+/* Efecto de transición suave al aparecer el modal */
+.modal.show {
+    display: block; /* Muestra el modal */
+    animation: fadeIn var(--fade-duration); /* Animación al aparecer */
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0.3; /* Comienza invisible */
     }
+    to {
+        opacity: 1; /* Termina completamente visible */
+    }
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: var(--footer-background); /* Fondo del pie de página */
+    color: var(--footer-text); /* Color del texto del pie de página */
+    text-align: center; /* Alineación centrada */
+    padding: 20px; /* Espaciado interno */
+    position: relative; /* Posición relativa */
+    bottom: 0; /* Alinear al fondo */
+    width: 100%; /* Ancho completo */
 }
